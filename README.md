@@ -6,7 +6,7 @@
 
 参考/src/main/resource/2008.xlsx文件
 
-![参考图片][excelformat.png]
+![参考图片](excelformat.png)
 
 # 配置文件
 在文件根目下找到system.properties配置文件
