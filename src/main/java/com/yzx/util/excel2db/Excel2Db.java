@@ -165,8 +165,14 @@ public class Excel2Db {
             else {
                 propertyClause.append(" NULL");
             }
-            if(!stringIsEmpty(property.getDefaultValue())) {
-                propertyClause.append(" DEFAULT "+property.getDefaultValue());
+            String defaultValue = property.getDefaultValue();
+            if(!stringIsEmpty(defaultValue)) {
+                if (defaultValue.toLowerCase().contains("on")) {
+                    propertyClause.append(" "+defaultValue);
+                }
+                else {
+                    propertyClause.append(" DEFAULT " + defaultValue);
+                }
             }
             if(!stringIsEmpty(property.getComment())) {
                 propertyClause.append(" COMMENT '"+property.getComment()+"'");
